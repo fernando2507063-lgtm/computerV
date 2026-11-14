@@ -95,3 +95,95 @@ Una vez que el servidor reporte estar listo, abre tu navegador en:
 * **DeepFace** — Framework de análisis facial inmersivo.
 * **OpenCV** — Localización y procesamiento espacial del rostro.
 * **HTML5 / CSS3 / JavaScript (ES6)** — Frontend premium inmersivo sin dependencias pesadas.
+
+
+---
+
+## Instalación y ejecución para evaluación académica
+
+### Requisitos previos
+
+- Python 3.10 o 3.11 (se recomienda 3.11).
+- Git instalado.
+- Conexión a Internet para instalar dependencias y descargar los modelos de DeepFace.
+- Navegador web actualizado.
+
+### 1. Clonar el repositorio
+
+```bash
+git clone https://github.com/fernando2507063-lgtm/computerV.git
+cd computerV
+```
+
+### 2. Crear el entorno virtual
+
+```bash
+python -m venv venv
+```
+
+### 3. Activar el entorno virtual
+
+En Windows (PowerShell):
+
+```powershell
+.\venv\Scripts\Activate.ps1
+```
+
+En macOS o Linux:
+
+```bash
+source venv/bin/activate
+```
+
+### 4. Instalar las dependencias
+
+```bash
+python -m pip install --upgrade pip
+python -m pip install -r requirements.txt
+```
+
+### 5. Ejecutar MoodMeter
+
+```bash
+python -m uvicorn app.main:app --host 127.0.0.1 --port 8000
+```
+
+### 6. Abrir la aplicación
+
+En el navegador ingresar a:
+
+http://127.0.0.1:8000
+
+### 7. Probar el funcionamiento
+
+1. Permitir el acceso a la cámara o seleccionar una fotografía.
+2. Capturar una imagen donde aparezca un rostro.
+3. Ejecutar el análisis de emociones.
+4. Revisar la emoción dominante y los porcentajes estimados.
+
+Nota: Durante la primera ejecución, DeepFace puede
+descargar modelos preentrenados automáticamente.
+
+### 8. Detener el servidor
+
+Presionar Ctrl+C en la terminal.
+
+### Ejecución automática en macOS o Linux
+
+También es posible utilizar el script incluido:
+
+```bash
+bash start.sh
+```
+
+Este script crea el entorno virtual si no existe,
+instala las dependencias e inicia el servidor.
+
+### Observaciones
+
+- El proyecto utiliza FastAPI, DeepFace y OpenCV.
+- Las dependencias se encuentran en requirements.txt.
+- Los resultados son estimaciones de expresiones faciales,
+  no diagnósticos del estado emocional de una persona.
+- Se recomienda utilizar imágenes con buena iluminación.
+```
